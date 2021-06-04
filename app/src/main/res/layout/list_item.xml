@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.example.baari.mvvmtask.retrofit.responce.UserData" />
+
+        <variable
+            name="user"
+            type="UserData" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/list_item_root"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/image_list_item"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/text_view_list_item"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.first_name + user.last_name}"
+            android:layout_toRightOf="@+id/image_list_item"
+            android:padding="4dp"
+            android:textSize="12dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/text_view_list_item2"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.email}"
+            android:layout_toRightOf="@+id/image_list_item"
+            android:layout_below="@+id/text_view_list_item"
+            android:padding="4dp"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+</layout>
